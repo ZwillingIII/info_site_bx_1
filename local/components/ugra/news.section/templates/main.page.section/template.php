@@ -53,7 +53,7 @@ $this->setFrameMode(true);
                   <div class="row">
                     <? foreach ($item["SUB"] as $sub) : ?>
                       <div class="col-md-3">
-                        <a href="/" class="sections-list-item"> <?= $sub["NAME"] ?> </a>
+                        <a href="/news/" class="sections-list-item"> <?= $sub["NAME"] ?> </a>
                       </div>
                     <? endforeach; ?>
                   </div>

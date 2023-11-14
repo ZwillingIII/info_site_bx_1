@@ -9,7 +9,9 @@
 /** @global CUser $USER */
 /** @global CMain $APPLICATION */
 
-// if ($this->StartResultCache()) {
+CModule::IncludeModule('iblock');
+
+if ($this->StartResultCache()) {
   $ar_sections = [];
   $new_ar_section = [];
 
@@ -47,7 +49,7 @@
   }
 
   $arResult["ITEMS"] = $ar_sections;
-// }
+}
 
 $this->includeComponentTemplate();
 

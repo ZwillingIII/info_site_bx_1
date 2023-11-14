@@ -139,43 +139,14 @@ $this->setFrameMode(true);
 						class="icon icon-arrow icon-arrow--right slider-arrow"
 					></button>
 				</div>
-				<div class="event-related">
-					<div class="event-related__title heading heading--4">
-						Другие события этого дня
-					</div>
-					<div class="event-related-list">
-						<a href="#" class="event-related-list-item">
-							<img
-								src="./images/card.jpg"
-								alt="85 лет назад (1938) родилась Утяганова Асия Лутфурахмановна"
-								class="event-related-list-item__image"
-							/>
-							<div class="event-related-list-item__title">
-								85 лет назад (1938) родилась Утяганова Асия Лутфурахмановна
-							</div>
-						</a>
-						<a href="#" class="event-related-list-item">
-							<img
-								src="./images/card.jpg"
-								alt="85 лет назад (1938) родилась Утяганова Асия Лутфурахмановна"
-								class="event-related-list-item__image"
-							/>
-							<div class="event-related-list-item__title">
-								85 лет назад (1938) родилась Утяганова Асия Лутфурахмановна
-							</div>
-						</a>
-						<a href="#" class="event-related-list-item">
-							<img
-								src="./images/card.jpg"
-								alt="85 лет назад (1938) родилась Утяганова Асия Лутфурахмановна"
-								class="event-related-list-item__image"
-							/>
-							<div class="event-related-list-item__title">
-								85 лет назад (1938) родилась Утяганова Асия Лутфурахмановна
-							</div>
-						</a>
-					</div>
-				</div>
+				<? $APPLICATION->IncludeComponent(
+					"ugra:news.similar.dates",
+					"",
+					[
+						"COMPARED_DATE" => $arResult["DATE_CREATE"]
+					],
+					false
+				); ?>
 
 				<div class="tags">
 					<div class="tags__title heading heading--4">Теги:</div>
