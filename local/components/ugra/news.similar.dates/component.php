@@ -38,7 +38,7 @@ if ($this->StartResultCache()) {
 
   while ($get_element = $db_elements->fetch()) {
     if (date("d:m", strtotime($get_element["DATE_CREATE"])) == $compared_date) {
-      $get_element["DETAIL_PAGE_URL"] = "/new/";
+      $get_element["DETAIL_PAGE_URL"] = "/news/";
       if (!empty($get_element["CODE"])) {
         $get_element["DETAIL_PAGE_URL"] .= $get_element["CODE"];
       }
