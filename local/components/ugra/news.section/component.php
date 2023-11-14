@@ -9,43 +9,45 @@
 /** @global CUser $USER */
 /** @global CMain $APPLICATION */
 
-$ar_sections = [];
-$new_ar_section = [];
+// if ($this->StartResultCache()) {
+  $ar_sections = [];
+  $new_ar_section = [];
 
-$obj_section = CIBlockSection::GetList(
-  [
-    "name" => "asc"
-  ],
-  [
-    "ACTIVE" => 'Y',
-    "IBLOCK_ID" => 1,
-  ],
-  false,
-  [
-    "ID",
-    "CODE",
-    "NAME",
-    "ACTIVE",
-    "IBLOCK_SECTION_ID"
-  ]
-);
+  $obj_section = \CIBlockSection::GetList(
+    [
+      "name" => "asc"
+    ],
+    [
+      "ACTIVE" => 'Y',
+      "IBLOCK_ID" => 1,
+    ],
+    false,
+    [
+      "ID",
+      "CODE",
+      "NAME",
+      "ACTIVE",
+      "IBLOCK_SECTION_ID"
+    ]
+  );
 
-while ($get_sect = $obj_section->fetch()) {
-  $ar_sections[] = $get_sect;
-}
-
-foreach ($ar_sections as $key => $section) {
-  if (!empty($section["IBLOCK_SECTION_ID"])) {
-    foreach ($ar_sections as &$sect) {
-      if ($section["IBLOCK_SECTION_ID"] == $sect["ID"]) {
-        $sect["SUB"][] = $section;
-      }
-    }
-    unset($ar_sections[$key]);
+  while ($get_sect = $obj_section->fetch()) {
+    $ar_sections[] = $get_sect;
   }
-}
 
-$arResult["ITEMS"] = $ar_sections;
+  foreach ($ar_sections as $key => $section) {
+    if (!empty($section["IBLOCK_SECTION_ID"])) {
+      foreach ($ar_sections as &$sect) {
+        if ($section["IBLOCK_SECTION_ID"] == $sect["ID"]) {
+          $sect["SUB"][] = $section;
+        }
+      }
+      unset($ar_sections[$key]);
+    }
+  }
+
+  $arResult["ITEMS"] = $ar_sections;
+// }
 
 $this->includeComponentTemplate();
 
