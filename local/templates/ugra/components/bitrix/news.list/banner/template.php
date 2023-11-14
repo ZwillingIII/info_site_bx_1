@@ -12,33 +12,30 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 $item = $arResult["ITEMS"][0];
-// print_r($item);
 ?>
 
 <div class="card-inline">
 	<div class="card-image card-inline__image">
 		<img
 			loading="lazy"
-			src="<?= SITE_TEMPLATE_PATH."/img/card.jpg" ?>"
-			alt="Визит Патриарха Кирилла"
+			src="<?= $item["PREVIEW_PICTURE"]["SRC"] ?>"
+			alt="<?= $item['NAME'] ?>"
 		/>
 		<div class="card-badge card-badge--primary">
-			<span class="card-badge__mounth">Сен</span>
-			<span class="card-badge__num">18</span>
+			<span class="card-badge__mounth"><?= $item["FORMAT_DATE"]["MONTH"] ?></span>
+			<span class="card-badge__num"><?= $item["FORMAT_DATE"]["DAY"] ?></span>
 		</div>
 	</div>
 	<div class="card-inline__body">
 		<div class="card-inline__tag">Юбилей</div>
 		<div class="card-inline__title heading heading--3">
-			Визит Патриарха Кирилла
+			<?= $item['NAME'] ?>
 		</div>
 		<div class="card-announce card-inline__announce">
-			10 лет назад (2013) в Ханты-Мансийский автономный округ – Югра
-			с первым первосвятительским визитом прибыл Святейший Патриарх
-			Московский и всея Руси Кирилл.
+			<?= $item["PREVIEW_TEXT"] ?>
 		</div>
-		<a class="btn icon icon-arrow icon-arrow--right">
-			Читать далее
+		<a href="<?= $item["DETAIL_PAGE_URL"] ?>" class="btn icon icon-arrow icon-arrow--right">
+			<?= \Bitrix\Main\Localization\Loc::getMessage('READ_MORE') ?>
 		</a>
 	</div>
 </div>
