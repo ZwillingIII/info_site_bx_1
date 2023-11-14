@@ -32,6 +32,7 @@ use Bitrix\Main\Page\Asset;
     <?
       Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/app.js");
       Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/app.css");
+      Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/new.css");
 
       $APPLICATION->ShowHead();
     ?>
