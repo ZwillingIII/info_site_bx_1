@@ -13,7 +13,7 @@
 $this->setFrameMode(true);
 ?>
 
-<main class="main" style="background-image: url('./images/main-bg.jpg')">
+<main class="main" style="background-image: url('<?= SITE_TEMPLATE_PATH."/img/main-bg.jpg" ?>')">
 	<div class="tag">
 		<div class="container">
 			<h1 class="tag__title heading heading--2">
