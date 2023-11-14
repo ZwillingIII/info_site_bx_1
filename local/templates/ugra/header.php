@@ -41,6 +41,7 @@ use Bitrix\Main\Page\Asset;
 
     <? if ($USER->IsAdmin()) $APPLICATION->ShowPanel(); ?>
 
+    <? if ($APPLICATION->GetCurPage() == '/' || $APPLICATION->GetCurPage() == '/news/') : ?>
     <header class="header">
       <div class="bg">
         <div class="container">
@@ -94,3 +95,4 @@ use Bitrix\Main\Page\Asset;
         </div>
       </div>
     </header>
+    <? endif; ?>
