@@ -24,8 +24,20 @@ $APPLICATION->SetTitle("Новости");
     ],
     "SEF_MODE" => 'Y',
     "SEF_URL_TEMPLATES" => [
-      "detail" => "/news/#ELEMENT_CODE#/",
-			"news" => "/news/",
+      "detail" => "#ELEMENT_CODE#/",
+			// "news" => "/news/",
+    ],
+    "URL_TEMPLATES" => [
+      "detail" => "#ELEMENT_CODE#/"
+    ],
+    "SEF_FOLDER" => "/news/",
+    "DETAIL_PROPERTY_CODE" => [
+      "EVENT_HEADING",
+      "ADDITIONAL_IMAGES",
+      "TAGS"
+    ],
+    "DETAIL_FIELD_CODE" => [
+      "DATE_CREATE"
     ]
   ],
   false

@@ -2,10 +2,10 @@
 $arUrlRewrite=array (
   0 => 
   array (
-    'CONDITION' => '#^/rest/#',
+    'CONDITION' => '#^/news/#',
     'RULE' => '',
-    'ID' => NULL,
-    'PATH' => '/bitrix/services/rest/index.php',
+    'ID' => 'bitrix:news',
+    'PATH' => '/news/index.php',
     'SORT' => 100,
   ),
 );

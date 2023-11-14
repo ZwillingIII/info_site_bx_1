@@ -51,7 +51,7 @@ $this->setFrameMode(true);
 			<div class="row">
 				<div class="col-12">
 					<div class="cards-list-slider__more">
-						<a href="/" class="btn btn--white icon icon-plus">
+						<a href="/news" class="btn btn--white icon icon-plus">
 							<?= \Bitrix\Main\Localization\Loc::getMessage('MORE') ?>
 						</a>
 					</div>
